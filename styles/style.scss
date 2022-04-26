@@ -1,9 +1,9 @@
 @import "abstracts/index";
 
+
 #page_container {
   background-color: $background_blue;
-  padding-left: clamp(10%, 1rem, 80%);
-  padding-right: clamp(10%, 1rem, 80%);
+  
   font-family: "Inter", sans-serif;
 
   header {
@@ -11,12 +11,12 @@
     align-items: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    box-sizing: border-box;
     display: flex;
     position: fixed;
-    transition: all 0.3s ease;
-    width: 80%;
-    z-index: 2;
+    width: 100%;
+    box-shadow: 2px 9px 50px 8px #FBF8F3;
+
+    
 
     .check {
       margin: 0 auto;
@@ -29,6 +29,8 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
+        margin-left: 4rem;
+        
 
         .header_container_main_page {
           text-decoration: none;
@@ -63,6 +65,8 @@
             display: flex;
             padding: 16px 24px;
             transition: all 0.5s ease;
+            margin-right: 8rem;
+            
 
             &:hover {
               background-color: $button_hover_color;
@@ -91,7 +95,7 @@
       margin: 0 auto;
       max-width: 75rem;
       width: 100%;
-      column-gap: 40px;
+      column-gap: 10px;
       display: flex;
       justify-content: space-between;
 
@@ -99,13 +103,15 @@
         display: flex;
         flex-direction: column;
         padding-top: 46px;
-        width: 45%;
+        width: 55%;
+        margin-left: 4rem;
+        margin-right: 4rem;
 
         .service_summary_container_left_headline {
           font-size: $font_6xl;
           font-style: normal;
           font-weight: 700;
-          line-height: 120%;
+          line-height: 100%;
           margin-bottom: 1rem;
         }
 
@@ -208,6 +214,7 @@
         height: fit-content;
         width: 30rem;
         padding-bottom: 2rem;
+        margin-right: 4rem;
 
         img {
           height: fit-content;
@@ -227,6 +234,7 @@
       margin: 0 auto;
       max-width: 75rem;
       width: 100%;
+      
 
       .feature_container_headline {
         font-size: $font_4xl;
@@ -235,6 +243,9 @@
         line-height: 120%;
         width: 50%;
         margin-bottom: 2rem;
+        margin-left: 4rem;
+        margin-right: 4rem;
+        
       }
 
       .feature_container_box {
@@ -243,6 +254,8 @@
         flex-wrap: wrap;
         margin-top: 32px;
         row-gap: 40px;
+        margin-left: 4rem;
+        margin-right: 4rem;
 
         .feature_container_box_item {
           border: 1px solid #c5c5c5;
@@ -288,6 +301,7 @@
       margin: 0 auto;
       max-width: 75rem;
       width: 100%;
+      
 
       .feedback_container_headline {
         font-size: $font_4xl;
@@ -296,28 +310,51 @@
         line-height: 120%;
         width: 50%;
         margin-bottom: 2rem;
+        margin-left: 4rem;
+        margin-right: 4rem;
       }
 
       .feedback_container_box {
-        column-gap: 20px;
+        box-sizing: border-box;
+        column-gap: 2.8rem;
         display: flex;
         margin: 0 auto;
-        max-width: 75rem;
+        max-width: 67rem;
         overflow-y: scroll;
         width: 100%;
+        
+        
+        
         &::-webkit-scrollbar {
           display: none;
         }
 
         .feedback_container_box_item {
           background: #fff;
+          box-sizing: border-box;
           border-radius: 6px;
           display: flex;
           flex-direction: column;
+          order: 3;
           height: fit-content;
-          max-width: 40rem;
-          min-width: 20rem;
+          max-width: 20.5rem;
+          min-width: 17.5rem;
           padding: 2rem;
+
+          &:last-child{
+            @media (max-width:1215px){
+              margin-right: 4rem;
+            }
+          }
+
+          &:first-child{
+            @media (max-width:1215px){
+              margin-left: 4rem;
+            }
+          }
+          
+
+          
 
           .feedback_container_box_item_header {
             display: flex;
@@ -421,6 +458,8 @@
         line-height: 120%;
         margin-bottom: 1rem;
         max-width: 32rem;
+        margin-left: 4rem;
+        margin-right: 4rem;
       }
 
       .price_container_subline {
@@ -555,12 +594,14 @@
         font-size: $font_xl;
         font-style: italic;
         font-weight: bold;
+        margin-left: 4rem;
       }
 
       .footer_navbar {
         align-items: center;
         column-gap: 28px;
         display: flex;
+        margin-right: 4rem;
 
         .footer_navbar_option {
           display: inline-block;
@@ -574,4 +615,14 @@
       }
     }
   }
+}
+
+
+
+@media (min-width:1200) {
+  .feedback_container_box_item{
+    margin-left: 4rem;
+    background-color:  red;
+  }
+  
 }
