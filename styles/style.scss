@@ -1,9 +1,14 @@
 @import "abstracts/index";
 
+:root {
+  @media (max-width: $tablet) {
+    font-size: 1.4vh;
+  }
+}
 
 #page_container {
   background-color: $background_blue;
-  
+
   font-family: "Inter", sans-serif;
 
   header {
@@ -14,9 +19,7 @@
     display: flex;
     position: fixed;
     width: 100%;
-    box-shadow: 2px 9px 50px 8px #FBF8F3;
-
-    
+    box-shadow: 2px 9px 50px 8px #fbf8f3;
 
     .check {
       margin: 0 auto;
@@ -30,7 +33,10 @@
         justify-content: space-between;
         width: 100%;
         margin-left: 4rem;
-        
+        @media (max-width: $tablet) {
+          margin-left: 2rem;
+          margin-right: 2rem;
+        }
 
         .header_container_main_page {
           text-decoration: none;
@@ -66,7 +72,10 @@
             padding: 16px 24px;
             transition: all 0.5s ease;
             margin-right: 8rem;
-            
+
+            @media (max-width: $tablet) {
+              margin-right: 4rem;
+            }
 
             &:hover {
               background-color: $button_hover_color;
@@ -99,13 +108,24 @@
       display: flex;
       justify-content: space-between;
 
+      @media (max-width: $tablet) {
+        flex-direction: column-reverse;
+      }
+
       .service_summary_container_left {
         display: flex;
         flex-direction: column;
         padding-top: 46px;
-        width: 55%;
+        width: 65%;
         margin-left: 4rem;
         margin-right: 4rem;
+
+        @media (max-width: $tablet) {
+          flex-direction: column;
+          margin-left: 2rem;
+          margin-right: 2rem;
+          width: 93%;
+        }
 
         .service_summary_container_left_headline {
           font-size: $font_6xl;
@@ -186,7 +206,7 @@
             width: 46px;
 
             &:not(:first-child) {
-              margin-left: -1.5rem;
+              margin-left: -1.6rem;
             }
             &:hover {
               transform: scale(1.2);
@@ -212,14 +232,39 @@
 
       .service_summary_container_right {
         height: fit-content;
-        width: 30rem;
+        width: 45rem;
         padding-bottom: 2rem;
         margin-right: 4rem;
 
-        img {
+        @media (max-width: $tablet) {
+          width: 93%;
+          margin-right: 2rem;
+          margin-left: 2rem;
+        }
+
+        .service_summary_container_right_desktop_image {
           height: fit-content;
           width: 100%;
           min-width: 20rem;
+          display: block;
+
+          @media (max-width: $tablet) {
+            display: none;
+          }
+        }
+
+        .service_summary_container_right_tablet_image {
+          display: none;
+          height: fit-content;
+          width: 100%;
+          min-width: 20rem;
+
+          @media (max-width: $tablet) {
+            display: block;
+            height: fit-content;
+            width: 101%;
+            min-width: 25rem;
+          }
         }
       }
     }
@@ -234,7 +279,6 @@
       margin: 0 auto;
       max-width: 75rem;
       width: 100%;
-      
 
       .feature_container_headline {
         font-size: $font_4xl;
@@ -245,7 +289,10 @@
         margin-bottom: 2rem;
         margin-left: 4rem;
         margin-right: 4rem;
-        
+        @media (max-width: $tablet) {
+          margin-left: 2rem;
+          margin-right: 2rem;
+        }
       }
 
       .feature_container_box {
@@ -256,6 +303,10 @@
         row-gap: 40px;
         margin-left: 4rem;
         margin-right: 4rem;
+        @media (max-width: $tablet) {
+          margin-left: 2rem;
+          margin-right: 2rem;
+        }
 
         .feature_container_box_item {
           border: 1px solid #c5c5c5;
@@ -266,6 +317,9 @@
           padding: 24px 24px 20px;
           width: 30%;
           min-width: 15rem;
+          @media (max-width: $tablet) {
+            min-width: 25rem;
+          }
 
           .feature_container_box_item_icon {
             font-size: 40px;
@@ -301,7 +355,6 @@
       margin: 0 auto;
       max-width: 75rem;
       width: 100%;
-      
 
       .feedback_container_headline {
         font-size: $font_4xl;
@@ -312,6 +365,10 @@
         margin-bottom: 2rem;
         margin-left: 4rem;
         margin-right: 4rem;
+        @media (max-width: $tablet) {
+          margin-left: 2rem;
+          margin-right: 2rem;
+        }
       }
 
       .feedback_container_box {
@@ -322,9 +379,7 @@
         max-width: 67rem;
         overflow-y: scroll;
         width: 100%;
-        
-        
-        
+
         &::-webkit-scrollbar {
           display: none;
         }
@@ -341,20 +396,30 @@
           min-width: 17.5rem;
           padding: 2rem;
 
-          &:last-child{
-            @media (max-width:1215px){
+          @media (max-width: $tablet) {
+            max-width: 25rem;
+            min-width: 25rem;
+          }
+
+          &:last-child {
+            @media (max-width: 1215px) {
               margin-right: 4rem;
             }
-          }
-
-          &:first-child{
-            @media (max-width:1215px){
-              margin-left: 4rem;
+            @media (max-width:$tablet){
+      
+              margin-right: 2rem;
             }
           }
-          
 
-          
+          &:first-child {
+            @media (max-width: 1215px) {
+              margin-left: 4rem;
+            }
+            @media (max-width:$tablet){
+              margin-left: 2rem;
+              
+            }
+          }
 
           .feedback_container_box_item_header {
             display: flex;
@@ -460,6 +525,10 @@
         max-width: 32rem;
         margin-left: 4rem;
         margin-right: 4rem;
+        @media (max-width: $tablet) {
+          margin-left: 2rem;
+          margin-right: 2rem;
+        }
       }
 
       .price_container_subline {
@@ -541,6 +610,7 @@
             }
           }
         }
+        
 
         .price_container_footer {
           display: block;
@@ -595,6 +665,9 @@
         font-style: italic;
         font-weight: bold;
         margin-left: 4rem;
+        @media (max-width: $tablet) {
+          margin-left: 2rem;
+        }
       }
 
       .footer_navbar {
@@ -602,6 +675,9 @@
         column-gap: 28px;
         display: flex;
         margin-right: 4rem;
+        @media (max-width: $tablet) {
+          margin-right: 2rem;
+        }
 
         .footer_navbar_option {
           display: inline-block;
@@ -615,14 +691,4 @@
       }
     }
   }
-}
-
-
-
-@media (min-width:1200) {
-  .feedback_container_box_item{
-    margin-left: 4rem;
-    background-color:  red;
-  }
-  
 }
